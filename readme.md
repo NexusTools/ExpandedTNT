@@ -1,6 +1,6 @@
 ExpandedTNT
 ========================
-Simply adds new types of TNT, totally original. Each custom TNT explodes in a (I believe) 1x1x1 area to set-off any close-by TNT.
+__ExpandedTNT__ is a **Minecraft Mod** Simply adds new types of TNT, totally original. Each custom TNT explodes in a (I believe) 1x1x1 area to set-off any close-by TNT.
 
 Currently the following new TNT's exist, and via configuration files are possible to disable/enable:
 
