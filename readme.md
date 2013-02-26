@@ -1,9 +1,15 @@
-<h3>VirusMod</h3>
-================================
-VirusMod is a **Minecraft Mod** of which introduces different virus variants into the game.
+ExpandedTNT
+========================
+Simply adds new types of TNT, totally original. Each custom TNT explodes in a (I believe) 1x1x1 area to set-off any close-by TNT.
 
-Currently the viruses stem off the idea of bacteria, raw meats and slime causing a rather absurd outcome of a strain of a virus which can cause mass destruction.
+Currently the following new TNT's exist, and via configuration files are possible to disable/enable:
 
-Code wise, the main block you place is the "host" of the virus, it's the central hub of which contains the <i>TileEntity</i>, this contains how long it'll last, and the 'logic' of the virus.
+* Arrow TNT - Launches arrows in a rather sphereical pattern.
+* Egg TNT - Eggs everywhere.
+* TNT TNT - Launches regular TNT.
+* TNT TNT TNT - Launches TNT TNT, of which will launch regular TNT, rather absurd.
 
-Some credits are towards the <a href="http://www.minecraftforum.net/topic/880935-" target="_blank">BacteriaMod</a> as I initally liked the mods idea and wanted to stem off of it. I in no way intended to copy any of their work and respectfully never used any of their code.
+TODO:
+=============
+* Customization of how many entities are launched by each block.
+* Possibly make it more dynamic in how they are added to the point where it's potentially exponential in TNT variants.
