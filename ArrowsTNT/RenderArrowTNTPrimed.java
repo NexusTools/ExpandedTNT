@@ -1,4 +1,4 @@
-package steve4448.ExpandedTNT.ArrowsTNT;
+package ExpandedTNT.ArrowsTNT;
 
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.Render;
@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 
 import org.lwjgl.opengl.GL11;
 
-import steve4448.ExpandedTNT.ExpandedTNT;
+import ExpandedTNT.ExpandedTNT;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -41,7 +41,7 @@ public class RenderArrowTNTPrimed extends Render {
 		}
 
 		var10 = (1.0F - (entityArrowTNT.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
-		loadTexture("/steve4448/ExpandedTNT/images/tntsheet.png");
+		loadTexture("/ExpandedTNT/images/tntsheet.png");
 		blockRenderer.renderBlockAsItem(ExpandedTNT.blockArrowsTNT, 0, entityArrowTNT.getBrightness(par9));
 
 		if(entityArrowTNT.fuse / 5 % 2 == 0) {

@@ -1,4 +1,4 @@
-package steve4448.ExpandedTNT.TNTTNTTNT;
+package ExpandedTNT.TNTTNTTNT;
 
 import net.minecraft.block.BlockTNT;
 import net.minecraft.creativetab.CreativeTabs;
@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import steve4448.ExpandedTNT.ExpandedTNT;
+import ExpandedTNT.ExpandedTNT;
 
 public class BlockTNTTNTTNT extends BlockTNT {
 	public BlockTNTTNTTNT(int par1) {
@@ -63,6 +63,6 @@ public class BlockTNTTNTTNT extends BlockTNT {
 
 	@Override
 	public String getTextureFile() {
-		return "/steve4448/ExpandedTNT/images/tntsheet.png";
+		return "/ExpandedTNT/images/tntsheet.png";
 	}
 }

@@ -1,22 +1,22 @@
-package steve4448.ExpandedTNT;
+package ExpandedTNT;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
-import steve4448.ExpandedTNT.ArrowsTNT.BlockArrowsTNT;
-import steve4448.ExpandedTNT.ArrowsTNT.EntityArrowTNTPrimed;
-import steve4448.ExpandedTNT.ArrowsTNT.RenderArrowTNTPrimed;
-import steve4448.ExpandedTNT.EggTNT.BlockEggTNT;
-import steve4448.ExpandedTNT.EggTNT.EntityEggTNTPrimed;
-import steve4448.ExpandedTNT.EggTNT.RenderEggTNTPrimed;
-import steve4448.ExpandedTNT.TNTTNT.BlockTNTTNT;
-import steve4448.ExpandedTNT.TNTTNT.EntityTNTTNTPrimed;
-import steve4448.ExpandedTNT.TNTTNT.RenderTNTTNTPrimed;
-import steve4448.ExpandedTNT.TNTTNTTNT.BlockTNTTNTTNT;
-import steve4448.ExpandedTNT.TNTTNTTNT.EntityTNTTNTTNTPrimed;
-import steve4448.ExpandedTNT.TNTTNTTNT.RenderTNTTNTTNTPrimed;
+import ExpandedTNT.ArrowsTNT.BlockArrowsTNT;
+import ExpandedTNT.ArrowsTNT.EntityArrowTNTPrimed;
+import ExpandedTNT.ArrowsTNT.RenderArrowTNTPrimed;
+import ExpandedTNT.EggTNT.BlockEggTNT;
+import ExpandedTNT.EggTNT.EntityEggTNTPrimed;
+import ExpandedTNT.EggTNT.RenderEggTNTPrimed;
+import ExpandedTNT.TNTTNT.BlockTNTTNT;
+import ExpandedTNT.TNTTNT.EntityTNTTNTPrimed;
+import ExpandedTNT.TNTTNT.RenderTNTTNTPrimed;
+import ExpandedTNT.TNTTNTTNT.BlockTNTTNTTNT;
+import ExpandedTNT.TNTTNTTNT.EntityTNTTNTTNTPrimed;
+import ExpandedTNT.TNTTNTTNT.RenderTNTTNTTNTPrimed;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -28,7 +28,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.3")
+@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.4")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class ExpandedTNT {
 	public static final int TNT_TEXTURE_TOP = 16, TNT_TEXTURE_BOTTOM = 17, TNT_ARROWS_SIDES = 0, TNT_EGGS_SIDES = 1, TNT_TNT_SIDES = 2, TNT_TNT_TNT_SIDES = 3;
@@ -57,7 +57,7 @@ public class ExpandedTNT {
 
 	@Init
 	public void load(FMLInitializationEvent iEvent) {
-		MinecraftForgeClient.preloadTexture("/steve4448/ExpandedTNT/images/tntsheet.png");
+		MinecraftForgeClient.preloadTexture("/ExpandedTNT/images/tntsheet.png");
 		blockArrowsTNT = new BlockArrowsTNT(blockArrowsTNTID);
 		blockEggTNT = new BlockEggTNT(blockEggTNTID);
 		blockTNTTNT = new BlockTNTTNT(blockTNTTNTID);

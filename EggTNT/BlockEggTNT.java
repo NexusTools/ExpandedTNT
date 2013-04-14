@@ -1,4 +1,4 @@
-package steve4448.ExpandedTNT.TNTTNT;
+package ExpandedTNT.EggTNT;
 
 import net.minecraft.block.BlockTNT;
 import net.minecraft.creativetab.CreativeTabs;
@@ -6,12 +6,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import steve4448.ExpandedTNT.ExpandedTNT;
+import ExpandedTNT.ExpandedTNT;
 
-public class BlockTNTTNT extends BlockTNT {
-	public BlockTNTTNT(int par1) {
+public class BlockEggTNT extends BlockTNT {
+	public BlockEggTNT(int par1) {
 		super(par1, 0);
-		setBlockName("TNT TNT");
+		setBlockName("Egg TNT");
 		setCreativeTab(CreativeTabs.tabRedstone);
 	}
 
@@ -22,13 +22,13 @@ public class BlockTNTTNT extends BlockTNT {
 		else if(par1 == 1)
 			return ExpandedTNT.TNT_TEXTURE_TOP;
 		else
-			return ExpandedTNT.TNT_TNT_SIDES;
+			return ExpandedTNT.TNT_EGGS_SIDES;
 	}
 
 	@Override
 	public void onBlockDestroyedByExplosion(World par1World, int par2, int par3, int par4) {
 		if(!par1World.isRemote) {
-			EntityTNTTNTPrimed var5 = new EntityTNTTNTPrimed(par1World);
+			EntityEggTNTPrimed var5 = new EntityEggTNTPrimed(par1World);
 			var5.setPosition(par2 + 0.5F, par3 + 0.5F, par4 + 0.5F);
 			var5.fuse = par1World.rand.nextInt(var5.fuse / 8);
 			par1World.spawnEntityInWorld(var5);
@@ -39,7 +39,7 @@ public class BlockTNTTNT extends BlockTNT {
 	public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5) {
 		if(!par1World.isRemote)
 			if((par5 & 1) == 1) {
-				EntityTNTTNTPrimed var6 = new EntityTNTTNTPrimed(par1World);
+				EntityEggTNTPrimed var6 = new EntityEggTNTPrimed(par1World);
 				var6.setPosition(par2 + 0.5F, par3 + 0.5F, par4 + 0.5F);
 				par1World.spawnEntityInWorld(var6);
 				par1World.playSoundAtEntity(var6, "random.fuse", 1.0F, 1.0F);
@@ -63,6 +63,6 @@ public class BlockTNTTNT extends BlockTNT {
 
 	@Override
 	public String getTextureFile() {
-		return "/steve4448/ExpandedTNT/images/tntsheet.png";
+		return "/ExpandedTNT/images/tntsheet.png";
 	}
 }
