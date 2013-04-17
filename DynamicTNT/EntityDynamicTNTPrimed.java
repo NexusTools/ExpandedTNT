@@ -1,16 +1,16 @@
-package ExpandedTNT.ArrowsTNT;
+package ExpandedTNT.DynamicTNT;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityArrowTNTPrimed extends Entity {
+public class EntityDynamicTNTPrimed extends Entity {
 	public int fuse;
 
-	public EntityArrowTNTPrimed(World par1World) {
+	public EntityDynamicTNTPrimed(World par1World) {
 		super(par1World);
 		preventEntitySpawning = true;
 		setSize(0.98F, 0.98F);
@@ -47,12 +47,11 @@ public class EntityArrowTNTPrimed extends Entity {
 
 			if(!worldObj.isRemote) {
 				worldObj.createExplosion((Entity) null, posX, posY, posZ, 1f, true);
-				for(int i = 0; i < 8; i++) { // 8 logically make sense based on
-												// recipe.
-					EntityArrow entityarrow = new EntityArrow(worldObj, posX, posY, posZ);
-					entityarrow.setVelocity(rand.nextDouble() * 1.0D - rand.nextDouble() * 1.0D, 0.1D + rand.nextDouble() * 0.9D, rand.nextDouble() * 1.0D - rand.nextDouble() * 1.0D);
-					worldObj.spawnEntityInWorld(entityarrow);
-					worldObj.playSoundAtEntity(entityarrow, "random.bow", 1.0F, 1.0F);
+				for(int i = 0; i < 8; i++) { // 8 logically make sense based on recipe.
+					EntityTNTPrimed entityTNTPrimed = new EntityTNTPrimed(worldObj, posX, posY, posZ);
+					entityTNTPrimed.setVelocity(rand.nextDouble() * 1.0D - rand.nextDouble() * 1.0D, 0.1D + rand.nextDouble() * 0.9D, rand.nextDouble() * 1.0D - rand.nextDouble() * 1.0D);
+					worldObj.spawnEntityInWorld(entityTNTPrimed);
+					worldObj.playSoundAtEntity(entityTNTPrimed, "random.bow", 1.0F, 1.0F);
 				}
 			}
 		} else
