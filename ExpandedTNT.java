@@ -1,5 +1,7 @@
 package ExpandedTNT;
 
+import java.util.logging.Logger;
+
 import net.lepko.easycrafting.block.TileEntityEasyCrafting;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderEngine;
@@ -17,6 +19,7 @@ import ExpandedTNT.DynamicTNTBench.BlockTNTWorkbench;
 import ExpandedTNT.DynamicTNTBench.TileEntityTNTWorkbench;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -29,18 +32,21 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.8")
+@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.9")
 @NetworkMod(clientSideRequired = true)
 public class ExpandedTNT {
 	@Instance("ExpandedTNT")
 	public static ExpandedTNT instance;
+	public static Logger logInstance;
 	public static Block tntWorkbench;
 	public static int tntWorkbenchBlockID;
 	
 	public static Block dynamicTNT;
 	public static int dynamicTNTBlockID;
+	
 	@PreInit
 	public void preload(FMLPreInitializationEvent iEvent) {
+		logInstance = Logger.getLogger("ExpandedTNT");
 		Configuration conf = new Configuration(iEvent.getSuggestedConfigurationFile());
 		conf.load();
 		tntWorkbenchBlockID = conf.getBlock("tntWorkbenchBlockID", 407).getInt();
@@ -62,11 +68,8 @@ public class ExpandedTNT {
 		GameRegistry.registerBlock(dynamicTNT.setBlockName("Dynamic TNT"), "DynamicTNT");
 		LanguageRegistry.addName(dynamicTNT, "Dynamic TNT");
 		RenderingRegistry.registerBlockHandler(new RenderDynamicTNT(RenderingRegistry.getNextAvailableRenderId()));
-		//RenderingRegistry.registerEntityRenderingHandler(EntityArrowTNTPrimed.class, new RenderArrowTNTPrimed());
-		//EntityRegistry.registerModEntity(EntityArrowTNTPrimed.class, "EntityArrowTNTPrimed", 1, this, 160, 3, true);
-	}
-
-	public static ItemStack createTNTVariant(InventoryCrafting craftMatrix, World worldObj) {
-		return BlockDynamicTNT.createNewVariant(craftMatrix);
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityDynamicTNTPrimed.class, new RenderDynamicTNTPrimed());
+		EntityRegistry.registerModEntity(EntityDynamicTNTPrimed.class, "EntityDynamicTNTPrimed", 1, this, 160, 3, true);
 	}
 }

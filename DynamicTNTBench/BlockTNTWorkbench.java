@@ -31,12 +31,12 @@ public class BlockTNTWorkbench extends BlockContainer {
 	 */
 	public boolean onBlockActivated(World world, int x, int y, int z,
 			EntityPlayer player, int par6, float par7, float par8, float par9) {
-		//if (!world.isRemote) {
+		if (!world.isRemote) {
 			TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-			if (tileEntity == null || player.isSneaking())
+			if(tileEntity == null || player.isSneaking())
 				return false;
 			player.openGui(ExpandedTNT.instance, 0, world, x, y, z);
-		//}
+		}
 		return true;
 	}
 

@@ -7,5 +7,5 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityDynamicTNT extends TileEntity {
-	public static HashMap<InventoryCrafting, ItemStack> variants = new HashMap<InventoryCrafting, ItemStack>();
+	public static HashMap<ItemStack[], ItemStack> variants = new HashMap<ItemStack[], ItemStack>();
 }

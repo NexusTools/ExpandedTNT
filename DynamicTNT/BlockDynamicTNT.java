@@ -1,6 +1,9 @@
 package ExpandedTNT.DynamicTNT;
 
 import java.util.List;
+import java.util.logging.Level;
+
+import cpw.mods.fml.common.FMLLog;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -14,24 +17,10 @@ import net.minecraft.world.World;
 import ExpandedTNT.ExpandedTNT;
 
 public class BlockDynamicTNT extends BlockContainer {
+	
+	
 	public BlockDynamicTNT(int par1) {
 		super(par1, Material.tnt);
-	}
-	
-	public static ItemStack createNewVariant(InventoryCrafting craftMatrix) {
-		if(craftMatrix == null) //Redundant checks everywhere.
-			return null;
-		if(TileEntityDynamicTNT.variants.containsKey(craftMatrix))
-			return TileEntityDynamicTNT.variants.get(craftMatrix);
-		
-		ItemStack returnedItemStack = null;
-		
-		if(craftMatrix.getStackInSlot(4) != null && craftMatrix.getStackInSlot(4).itemID == new ItemStack(Block.tnt).itemID) {
-			returnedItemStack = new ItemStack(ExpandedTNT.dynamicTNT);
-			TileEntityDynamicTNT.variants.put(craftMatrix, returnedItemStack);
-		}
-		
-		return returnedItemStack;
 	}
 	
 	public int getBlockTextureFromSide(int par1) {
@@ -62,5 +51,43 @@ public class BlockDynamicTNT extends BlockContainer {
 	@Override
 	public TileEntity createNewTileEntity(World var1) {
 		return new TileEntityDynamicTNT();
+	}
+	
+	public static ItemStack createNewVariant(InventoryCrafting craftMatrix) {
+		if(craftMatrix == null) //Redundant checks everywhere.
+			return null;
+		ItemStack[] craftItems = new ItemStack[craftMatrix.getSizeInventory() - 1];
+		
+		for(int i = 1; i < craftMatrix.getSizeInventory() - 1; i++) {
+			craftItems[i] = craftMatrix.getStackInSlot(i);
+		}
+		
+		//Does this dynamic creation already exist? Check:
+		ItemStack[] existantStack = null;
+		for(ItemStack[] c : TileEntityDynamicTNT.variants.keySet()) {
+			for(int i = 0; i < craftItems.length; i++) {
+				if(c[i] == null || craftItems[i] == null && !(c[i] == null && craftItems[i] == null))
+					continue;
+				
+				if((c[i] == null && craftItems[i] == null) || c[i].isItemEqual(craftItems[i])) {
+					ExpandedTNT.logInstance.log(Level.INFO, "Found existant stack.");
+					existantStack = c;
+					break;
+				}
+			}
+		}
+		if(existantStack != null)
+			return TileEntityDynamicTNT.variants.get(existantStack).copy();
+		
+		//Nope, create:
+		ItemStack returnedItemStack = null;
+		
+		if(craftMatrix.getStackInSlot(4) != null && craftMatrix.getStackInSlot(4).itemID == new ItemStack(Block.tnt).itemID) {
+			returnedItemStack = new ItemStack(ExpandedTNT.dynamicTNT);
+			ExpandedTNT.logInstance.log(Level.INFO, "Creating a new item stack.");
+			TileEntityDynamicTNT.variants.put(craftItems, returnedItemStack);
+		}
+		
+		return returnedItemStack;
 	}
 }
