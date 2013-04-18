@@ -1,15 +1,11 @@
 ExpandedTNT
 ========================
-__ExpandedTNT__ is a **Minecraft Mod** of which simply adds new types of TNT, totally original. Each custom TNT explodes in a (I believe) 1x1x1 area to set-off any close-by TNT.
+__ExpandedTNT__ is a **Minecraft Mod** of which simply adds a method to craft 'dynamic' TNT.
 
-Currently the following new TNT's exist, and via configuration files are possible to disable/enable:
+Basically the fundamentals of this mod is that it adds a new crafting table called "TNT Crafting Table" of which allows you to dynamically make new variants of TNT that launches whatever item you see fit.
 
-* Arrow TNT - Launches arrows in a rather sphereical pattern.
-* Egg TNT - Eggs everywhere.
-* TNT TNT - Launches regular TNT.
-* TNT TNT TNT - Launches TNT TNT, of which will launch regular TNT, rather absurd.
+So, for example you could have it so your newly crafted TNT has 1 single item-stack of tnt on the left side, and another stack of arrows to the right, and when it's rendered it'd have those item stacks rendered into the model aswell. Once launched it'll also launch entities of the apporiate items you've placed alongside the TNT.
 
 TODO:
 =============
-* Customization of how many entities are launched by each block.
-* Possibly make it more dynamic in how they are added to the point where it's potentially exponential in TNT variants.
+* Actually create the new TNT variant, currently the implementation exists, just doesn't actually have any functionality. The plan is to dynamically use metadata to store the ones that currently exist.
