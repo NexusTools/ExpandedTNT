@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNT;
+package steve4448.DynamicTNT;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-import ExpandedTNT.ExpandedTNT;
+import steve4448.ExpandedTNT;
 
 public class RenderDynamicTNT implements ISimpleBlockRenderingHandler {
 	public int rendererId; //Rendererererererererererer.

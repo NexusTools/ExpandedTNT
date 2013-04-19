@@ -1,4 +1,4 @@
-package ExpandedTNT;
+package steve4448;
 
 import java.util.logging.Logger;
 
@@ -11,12 +11,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
-import ExpandedTNT.DynamicTNT.BlockDynamicTNT;
-import ExpandedTNT.DynamicTNT.EntityDynamicTNTPrimed;
-import ExpandedTNT.DynamicTNT.RenderDynamicTNT;
-import ExpandedTNT.DynamicTNT.RenderDynamicTNTPrimed;
-import ExpandedTNT.DynamicTNTBench.BlockTNTWorkbench;
-import ExpandedTNT.DynamicTNTBench.TileEntityTNTWorkbench;
+import steve4448.DynamicTNT.BlockDynamicTNT;
+import steve4448.DynamicTNT.EntityDynamicTNTPrimed;
+import steve4448.DynamicTNT.RenderDynamicTNT;
+import steve4448.DynamicTNT.RenderDynamicTNTPrimed;
+import steve4448.DynamicTNTBench.BlockTNTWorkbench;
+import steve4448.DynamicTNTBench.TileEntityTNTWorkbench;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLLog;
@@ -32,7 +32,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.9")
+@Mod(modid = "ExpandedTNT", name = "Expanded TNT", version = "0.9.91")
 @NetworkMod(clientSideRequired = true)
 public class ExpandedTNT {
 	@Instance("ExpandedTNT")
@@ -56,7 +56,7 @@ public class ExpandedTNT {
 
 	@Init
 	public void load(FMLInitializationEvent iEvent) {
-		MinecraftForgeClient.preloadTexture("/ExpandedTNT/images/tntsheet.png");
+		MinecraftForgeClient.preloadTexture("/steve4448/images/tntsheet.png");
 		
 		tntWorkbench = new BlockTNTWorkbench(tntWorkbenchBlockID);
 		GameRegistry.registerBlock(tntWorkbench.setBlockName("TNT Workbench"), "TNTWorkbench");

@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNTBench;
+package steve4448.DynamicTNTBench;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNT;
+package steve4448.DynamicTNT;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -14,7 +14,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import ExpandedTNT.ExpandedTNT;
+import steve4448.ExpandedTNT;
 
 public class BlockDynamicTNT extends BlockContainer {
 	
@@ -45,7 +45,7 @@ public class BlockDynamicTNT extends BlockContainer {
     
     @Override
     public String getTextureFile() {
-    	return "/ExpandedTNT/images/tntsheet.png";
+    	return "/steve4448/images/tntsheet.png";
     }
 
 	@Override

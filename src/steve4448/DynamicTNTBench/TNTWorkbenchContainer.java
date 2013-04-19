@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNTBench;
+package steve4448.DynamicTNTBench;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,8 +12,8 @@ import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
-import ExpandedTNT.ExpandedTNT;
-import ExpandedTNT.DynamicTNT.BlockDynamicTNT;
+import steve4448.ExpandedTNT;
+import steve4448.DynamicTNT.BlockDynamicTNT;
 
 public class TNTWorkbenchContainer extends Container {
 	/** The crafting matrix inventory (3x3). */

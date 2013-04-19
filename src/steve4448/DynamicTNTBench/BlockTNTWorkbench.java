@@ -1,6 +1,6 @@
-package ExpandedTNT.DynamicTNTBench;
+package steve4448.DynamicTNTBench;
 
-import ExpandedTNT.ExpandedTNT;
+import steve4448.ExpandedTNT;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

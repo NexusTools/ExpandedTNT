@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNT;
+package steve4448.DynamicTNT;
 
 import java.util.HashMap;
 

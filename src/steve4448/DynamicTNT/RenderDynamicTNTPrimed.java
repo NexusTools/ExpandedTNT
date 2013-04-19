@@ -1,4 +1,4 @@
-package ExpandedTNT.DynamicTNT;
+package steve4448.DynamicTNT;
 
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.Render;
@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 
 import org.lwjgl.opengl.GL11;
 
-import ExpandedTNT.ExpandedTNT;
+import steve4448.ExpandedTNT;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -41,7 +41,7 @@ public class RenderDynamicTNTPrimed extends Render {
 		}
 
 		var10 = (1.0F - (entityDynamicTNT.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
-		loadTexture("/ExpandedTNT/images/tntsheet.png"); //TODO: Here
+		loadTexture("/steve4448/images/tntsheet.png"); //TODO: Here
 		blockRenderer.renderBlockAsItem(ExpandedTNT.dynamicTNT, 0, entityDynamicTNT.getBrightness(par9));
 
 		if(entityDynamicTNT.fuse / 5 % 2 == 0) {
