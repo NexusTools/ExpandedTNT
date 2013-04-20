@@ -1,34 +1,25 @@
-package steve4448.DynamicTNT;
+package nexustools.DynamicTNT;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.entity.Entity;
 import net.minecraft.world.IBlockAccess;
-
-import org.lwjgl.opengl.GL11;
-
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-import steve4448.ExpandedTNT;
-
 public class RenderDynamicTNT implements ISimpleBlockRenderingHandler {
-	public int rendererId; //Rendererererererererererer.
-	
+	public int rendererId; // Rendererererererererererer.
+
 	public RenderDynamicTNT(int rendererId) {
 		this.rendererId = rendererId;
 	}
 
 	@Override
-	public void renderInventoryBlock(Block block, int metadata, int modelID,
-			RenderBlocks renderer) {
+	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
 		RenderingRegistry.instance().renderInventoryBlock(renderer, block, metadata, modelID);
 	}
 
 	@Override
-	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z,
-			Block block, int modelId, RenderBlocks renderer) {
+	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
 		return RenderingRegistry.instance().renderWorldBlock(renderer, world, x, y, z, block, modelId);
 	}
 

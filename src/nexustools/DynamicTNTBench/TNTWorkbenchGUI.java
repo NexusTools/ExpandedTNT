@@ -1,10 +1,10 @@
-package steve4448.DynamicTNTBench;
-
-import org.lwjgl.opengl.GL11;
+package nexustools.DynamicTNTBench;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
+
+import org.lwjgl.opengl.GL11;
 
 public class TNTWorkbenchGUI extends GuiContainer {
 
@@ -20,7 +20,7 @@ public class TNTWorkbenchGUI extends GuiContainer {
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float x, int y, int z) {
-		int texture = mc.renderEngine.getTexture("/steve4448/images/tntworkbenchgui.png");
+		int texture = mc.renderEngine.getTexture("/nexustools/images/tntworkbenchgui.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.mc.renderEngine.bindTexture(texture);
 		this.drawTexturedModalRect((width - xSize) / 2, (height - ySize) / 2, 0, 0, xSize, ySize);

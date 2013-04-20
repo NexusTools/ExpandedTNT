@@ -1,4 +1,4 @@
-package steve4448.DynamicTNT;
+package nexustools.DynamicTNT;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -54,8 +54,9 @@ public class EntityDynamicTNTPrimed extends Entity {
 					worldObj.playSoundAtEntity(entityTNTPrimed, "random.bow", 1.0F, 1.0F);
 				}
 			}
-		} else
+		} else {
 			worldObj.spawnParticle("smoke", posX, posY + 0.5D, posZ, 0.0D, 0.0D, 0.0D);
+		}
 	}
 
 	@Override

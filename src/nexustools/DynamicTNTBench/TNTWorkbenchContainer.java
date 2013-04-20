@@ -1,6 +1,5 @@
-package steve4448.DynamicTNTBench;
+package nexustools.DynamicTNTBench;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -10,10 +9,9 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
-import steve4448.ExpandedTNT;
-import steve4448.DynamicTNT.BlockDynamicTNT;
+import nexustools.ExpandedTNT;
+import nexustools.DynamicTNT.BlockDynamicTNT;
 
 public class TNTWorkbenchContainer extends Container {
 	/** The crafting matrix inventory (3x3). */
@@ -33,16 +31,21 @@ public class TNTWorkbenchContainer extends Container {
 		int var6;
 		int var7;
 
-		for (var6 = 0; var6 < 3; ++var6)
-			for (var7 = 0; var7 < 3; ++var7)
+		for(var6 = 0; var6 < 3; ++var6) {
+			for(var7 = 0; var7 < 3; ++var7) {
 				this.addSlotToContainer(new Slot(this.craftMatrix, var7 + var6 * 3, 30 + var7 * 18, 17 + var6 * 18));
+			}
+		}
 
-		for (var6 = 0; var6 < 3; ++var6)
-			for (var7 = 0; var7 < 9; ++var7)
+		for(var6 = 0; var6 < 3; ++var6) {
+			for(var7 = 0; var7 < 9; ++var7) {
 				this.addSlotToContainer(new Slot(invPlayer, var7 + var6 * 9 + 9, 8 + var7 * 18, 84 + var6 * 18));
+			}
+		}
 
-		for (var6 = 0; var6 < 9; ++var6)
+		for(var6 = 0; var6 < 9; ++var6) {
 			this.addSlotToContainer(new Slot(invPlayer, var6, 8 + var6 * 18, 142));
+		}
 
 		this.onCraftMatrixChanged(this.craftMatrix);
 	}
@@ -62,51 +65,57 @@ public class TNTWorkbenchContainer extends Container {
 	public void onCraftGuiClosed(EntityPlayer player) {
 		super.onCraftGuiClosed(player);
 
-		if (!this.worldObj.isRemote) {
-			for (int var2 = 0; var2 < 9; ++var2) {
+		if(!this.worldObj.isRemote) {
+			for(int var2 = 0; var2 < 9; ++var2) {
 				ItemStack var3 = this.craftMatrix.getStackInSlotOnClosing(var2);
 
-				if (var3 != null)
+				if(var3 != null) {
 					player.dropPlayerItem(var3);
+				}
 			}
 		}
 	}
 
 	@Override
 	public boolean canInteractWith(EntityPlayer player) {
-		return this.worldObj.getBlockId(this.posX, this.posY, this.posZ) != ExpandedTNT.tntWorkbenchBlockID ? false : player.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+		return this.worldObj.getBlockId(this.posX, this.posY, this.posZ) != ExpandedTNT.tntWorkbenchBlockID ? false : player.getDistanceSq(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D) <= 64.0D;
 	}
 
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2) {
 		ItemStack var3 = null;
-		Slot var4 = (Slot)this.inventorySlots.get(par2);
+		Slot var4 = (Slot) this.inventorySlots.get(par2);
 
-		if (var4 != null && var4.getHasStack()) {
+		if(var4 != null && var4.getHasStack()) {
 			ItemStack var5 = var4.getStack();
 			var3 = var5.copy();
 
-			if (par2 == 0) {
-				if (!this.mergeItemStack(var5, 10, 46, true))
+			if(par2 == 0) {
+				if(!this.mergeItemStack(var5, 10, 46, true)) {
 					return null;
+				}
 				var4.onSlotChange(var5, var3);
+			} else if(par2 >= 10 && par2 < 37) {
+				if(!this.mergeItemStack(var5, 37, 46, false)) {
+					return null;
+				}
+			} else if(par2 >= 37 && par2 < 46) {
+				if(!this.mergeItemStack(var5, 10, 37, false)) {
+					return null;
+				}
+			} else if(!this.mergeItemStack(var5, 10, 46, false)) {
+				return null;
 			}
-			else if (par2 >= 10 && par2 < 37) {
-				if (!this.mergeItemStack(var5, 37, 46, false))
-					return null;
-			} else if (par2 >= 37 && par2 < 46) {
-				if (!this.mergeItemStack(var5, 10, 37, false))
-					return null;
-			} else if (!this.mergeItemStack(var5, 10, 46, false))
-				return null;
 
-			if (var5.stackSize == 0)
-				var4.putStack((ItemStack)null);
-			else
+			if(var5.stackSize == 0) {
+				var4.putStack((ItemStack) null);
+			} else {
 				var4.onSlotChanged();
+			}
 
-			if (var5.stackSize == var3.stackSize)
+			if(var5.stackSize == var3.stackSize) {
 				return null;
+			}
 
 			var4.onPickupFromSlot(par1EntityPlayer, var5);
 		}
