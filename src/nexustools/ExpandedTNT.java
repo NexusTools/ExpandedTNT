@@ -49,9 +49,8 @@ public class ExpandedTNT {
 
 	@Init
 	public void load(FMLInitializationEvent iEvent) {
-		if(FMLCommonHandler.instance().getSide().isClient()) {
+		if(FMLCommonHandler.instance().getSide().isClient())
 			MinecraftForgeClient.preloadTexture("/nexustools/images/tntsheet.png");
-		}
 
 		tntWorkbench = new BlockTNTWorkbench(tntWorkbenchBlockID);
 		GameRegistry.registerBlock(tntWorkbench.setBlockName("TNT Workbench"), "TNTWorkbench");

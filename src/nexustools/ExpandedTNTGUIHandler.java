@@ -12,18 +12,16 @@ public class ExpandedTNTGUIHandler implements IGuiHandler {
 	@Override
 	public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-		if(tileEntity instanceof TileEntityTNTWorkbench) {
+		if(tileEntity instanceof TileEntityTNTWorkbench)
 			return new TNTWorkbenchContainer(player.inventory, (TileEntityTNTWorkbench) tileEntity);
-		}
 		return null;
 	}
 
 	@Override
 	public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-		if(tileEntity instanceof TileEntityTNTWorkbench) {
+		if(tileEntity instanceof TileEntityTNTWorkbench)
 			return new TNTWorkbenchGUI(player.inventory, (TileEntityTNTWorkbench) tileEntity);
-		}
 		return null;
 
 	}

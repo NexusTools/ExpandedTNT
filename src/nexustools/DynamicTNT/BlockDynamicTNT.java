@@ -50,22 +50,19 @@ public class BlockDynamicTNT extends BlockContainer {
 	}
 
 	public static ItemStack createNewVariant(InventoryCrafting craftMatrix) {
-		if(craftMatrix == null) {
+		if(craftMatrix == null)
 			return null;
-		}
 		ItemStack[] craftItems = new ItemStack[craftMatrix.getSizeInventory() - 1];
 
-		for(int i = 1; i < craftMatrix.getSizeInventory() - 1; i++) {
+		for(int i = 1; i < craftMatrix.getSizeInventory() - 1; i++)
 			craftItems[i] = craftMatrix.getStackInSlot(i);
-		}
 
 		// Does this dynamic creation already exist? Check:
 		ItemStack[] existantStack = null;
-		for(ItemStack[] c : TileEntityDynamicTNT.variants.keySet()) {
+		for(ItemStack[] c : TileEntityDynamicTNT.variants.keySet())
 			for(int i = 0; i < craftItems.length; i++) {
-				if(c[i] == null || craftItems[i] == null && !(c[i] == null && craftItems[i] == null)) {
+				if(c[i] == null || craftItems[i] == null && !(c[i] == null && craftItems[i] == null))
 					continue;
-				}
 
 				if((c[i] == null && craftItems[i] == null) || c[i].isItemEqual(craftItems[i])) {
 					ExpandedTNT.logInstance.log(Level.INFO, "Found existant stack.");
@@ -73,10 +70,8 @@ public class BlockDynamicTNT extends BlockContainer {
 					break;
 				}
 			}
-		}
-		if(existantStack != null) {
+		if(existantStack != null)
 			return TileEntityDynamicTNT.variants.get(existantStack).copy();
-		}
 
 		// Nope, create:
 		ItemStack returnedItemStack = null;

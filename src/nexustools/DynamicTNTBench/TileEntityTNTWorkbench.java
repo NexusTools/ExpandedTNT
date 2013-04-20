@@ -28,33 +28,29 @@ public class TileEntityTNTWorkbench extends TileEntity implements IInventory {
 	@Override
 	public void setInventorySlotContents(int slot, ItemStack stack) {
 		inv[slot] = stack;
-		if(stack != null && stack.stackSize > getInventoryStackLimit()) {
+		if(stack != null && stack.stackSize > getInventoryStackLimit())
 			stack.stackSize = getInventoryStackLimit();
-		}
 	}
 
 	@Override
 	public ItemStack decrStackSize(int slot, int amt) {
 		ItemStack stack = getStackInSlot(slot);
-		if(stack != null) {
-			if(stack.stackSize <= amt) {
+		if(stack != null)
+			if(stack.stackSize <= amt)
 				setInventorySlotContents(slot, null);
-			} else {
+			else {
 				stack = stack.splitStack(amt);
-				if(stack.stackSize == 0) {
+				if(stack.stackSize == 0)
 					setInventorySlotContents(slot, null);
-				}
 			}
-		}
 		return stack;
 	}
 
 	@Override
 	public ItemStack getStackInSlotOnClosing(int slot) {
 		ItemStack stack = getStackInSlot(slot);
-		if(stack != null) {
+		if(stack != null)
 			setInventorySlotContents(slot, null);
-		}
 		return stack;
 	}
 
@@ -82,9 +78,8 @@ public class TileEntityTNTWorkbench extends TileEntity implements IInventory {
 		for(int i = 0; i < tagList.tagCount(); i++) {
 			NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
 			byte slot = tag.getByte("Slot");
-			if(slot >= 0 && slot < inv.length) {
+			if(slot >= 0 && slot < inv.length)
 				inv[slot] = ItemStack.loadItemStackFromNBT(tag);
-			}
 		}
 	}
 
