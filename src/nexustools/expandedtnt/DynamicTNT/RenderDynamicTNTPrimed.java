@@ -1,9 +1,9 @@
-package nexustools.DynamicTNT;
+package nexustools.expandedtnt.DynamicTNT;
 
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
-import nexustools.ExpandedTNT;
+import nexustools.expandedtnt.ExpandedTNT;
 
 import org.lwjgl.opengl.GL11;
 
@@ -41,7 +41,7 @@ public class RenderDynamicTNTPrimed extends Render {
 		}
 
 		var10 = (1.0F - (entityDynamicTNT.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
-		loadTexture("/nexustools/images/tntsheet.png"); // TODO: Here
+		loadTexture("/nexustools/expandedtnt/images/tntsheet.png"); // TODO: Here
 		blockRenderer.renderBlockAsItem(ExpandedTNT.dynamicTNT, 0, entityDynamicTNT.getBrightness(par9));
 
 		if(entityDynamicTNT.fuse / 5 % 2 == 0) {

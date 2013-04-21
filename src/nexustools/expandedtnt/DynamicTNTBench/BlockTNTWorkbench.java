@@ -1,4 +1,4 @@
-package nexustools.DynamicTNTBench;
+package nexustools.expandedtnt.DynamicTNTBench;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -7,7 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import nexustools.ExpandedTNT;
+import nexustools.expandedtnt.ExpandedTNT;
 
 public class BlockTNTWorkbench extends BlockContainer {
 	public BlockTNTWorkbench(int par1) {

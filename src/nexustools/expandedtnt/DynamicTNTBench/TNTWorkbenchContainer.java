@@ -1,4 +1,4 @@
-package nexustools.DynamicTNTBench;
+package nexustools.expandedtnt.DynamicTNTBench;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -10,8 +10,8 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import nexustools.ExpandedTNT;
-import nexustools.DynamicTNT.BlockDynamicTNT;
+import nexustools.expandedtnt.ExpandedTNT;
+import nexustools.expandedtnt.DynamicTNT.BlockDynamicTNT;
 
 public class TNTWorkbenchContainer extends Container {
 	/** The crafting matrix inventory (3x3). */

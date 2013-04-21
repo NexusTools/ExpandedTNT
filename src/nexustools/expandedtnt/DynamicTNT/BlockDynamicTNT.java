@@ -1,4 +1,4 @@
-package nexustools.DynamicTNT;
+package nexustools.expandedtnt.DynamicTNT;
 
 import java.util.logging.Level;
 
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import nexustools.ExpandedTNT;
+import nexustools.expandedtnt.ExpandedTNT;
 
 public class BlockDynamicTNT extends BlockContainer {
 
@@ -41,7 +41,7 @@ public class BlockDynamicTNT extends BlockContainer {
 
 	@Override
 	public String getTextureFile() {
-		return "/nexustools/images/tntsheet.png";
+		return "/nexustools/expandedtnt/images/tntsheet.png";
 	}
 
 	@Override

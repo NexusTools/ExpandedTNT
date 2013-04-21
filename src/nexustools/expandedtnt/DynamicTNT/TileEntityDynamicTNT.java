@@ -1,4 +1,4 @@
-package nexustools.DynamicTNT;
+package nexustools.expandedtnt.DynamicTNT;
 
 import java.util.HashMap;
 

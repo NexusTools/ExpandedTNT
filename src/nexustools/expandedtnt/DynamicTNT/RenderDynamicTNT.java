@@ -1,4 +1,4 @@
-package nexustools.DynamicTNT;
+package nexustools.expandedtnt.DynamicTNT;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;

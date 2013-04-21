@@ -1,4 +1,4 @@
-package nexustools.DynamicTNT;
+package nexustools.expandedtnt.DynamicTNT;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityTNTPrimed;

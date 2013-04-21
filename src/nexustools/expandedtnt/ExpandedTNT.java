@@ -1,16 +1,16 @@
-package nexustools;
+package nexustools.expandedtnt;
 
 import java.util.logging.Logger;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
-import nexustools.DynamicTNT.BlockDynamicTNT;
-import nexustools.DynamicTNT.EntityDynamicTNTPrimed;
-import nexustools.DynamicTNT.RenderDynamicTNT;
-import nexustools.DynamicTNT.RenderDynamicTNTPrimed;
-import nexustools.DynamicTNTBench.BlockTNTWorkbench;
-import nexustools.DynamicTNTBench.TileEntityTNTWorkbench;
+import nexustools.expandedtnt.DynamicTNT.BlockDynamicTNT;
+import nexustools.expandedtnt.DynamicTNT.EntityDynamicTNTPrimed;
+import nexustools.expandedtnt.DynamicTNT.RenderDynamicTNT;
+import nexustools.expandedtnt.DynamicTNT.RenderDynamicTNTPrimed;
+import nexustools.expandedtnt.DynamicTNTBench.BlockTNTWorkbench;
+import nexustools.expandedtnt.DynamicTNTBench.TileEntityTNTWorkbench;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -50,7 +50,7 @@ public class ExpandedTNT {
 	@Init
 	public void load(FMLInitializationEvent iEvent) {
 		if(FMLCommonHandler.instance().getSide().isClient())
-			MinecraftForgeClient.preloadTexture("/nexustools/images/tntsheet.png");
+			MinecraftForgeClient.preloadTexture("/nexustools/expandedtnt/images/tntsheet.png");
 
 		tntWorkbench = new BlockTNTWorkbench(tntWorkbenchBlockID);
 		GameRegistry.registerBlock(tntWorkbench.setBlockName("TNT Workbench"), "TNTWorkbench");
