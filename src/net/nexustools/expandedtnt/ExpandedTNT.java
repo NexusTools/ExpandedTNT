@@ -1,16 +1,16 @@
-package nexustools.expandedtnt;
+package net.nexustools.expandedtnt;
 
 import java.util.logging.Logger;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
-import nexustools.expandedtnt.DynamicTNT.BlockDynamicTNT;
-import nexustools.expandedtnt.DynamicTNT.EntityDynamicTNTPrimed;
-import nexustools.expandedtnt.DynamicTNT.RenderDynamicTNT;
-import nexustools.expandedtnt.DynamicTNT.RenderDynamicTNTPrimed;
-import nexustools.expandedtnt.DynamicTNTBench.BlockTNTWorkbench;
-import nexustools.expandedtnt.DynamicTNTBench.TileEntityTNTWorkbench;
+import net.nexustools.expandedtnt.DynamicTNT.BlockDynamicTNT;
+import net.nexustools.expandedtnt.DynamicTNT.EntityDynamicTNTPrimed;
+import net.nexustools.expandedtnt.DynamicTNT.RenderDynamicTNT;
+import net.nexustools.expandedtnt.DynamicTNT.RenderDynamicTNTPrimed;
+import net.nexustools.expandedtnt.DynamicTNTBench.BlockTNTWorkbench;
+import net.nexustools.expandedtnt.DynamicTNTBench.TileEntityTNTWorkbench;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;

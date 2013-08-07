@@ -1,9 +1,9 @@
-package nexustools.expandedtnt.DynamicTNT;
+package net.nexustools.expandedtnt.DynamicTNT;
 
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
-import nexustools.expandedtnt.ExpandedTNT;
+import net.nexustools.expandedtnt.ExpandedTNT;
 
 import org.lwjgl.opengl.GL11;
 

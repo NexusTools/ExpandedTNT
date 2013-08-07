@@ -1,4 +1,4 @@
-package nexustools.expandedtnt.DynamicTNTBench;
+package net.nexustools.expandedtnt.DynamicTNTBench;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;

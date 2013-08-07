@@ -1,11 +1,11 @@
-package nexustools.expandedtnt;
+package net.nexustools.expandedtnt;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import nexustools.expandedtnt.DynamicTNTBench.TNTWorkbenchContainer;
-import nexustools.expandedtnt.DynamicTNTBench.TNTWorkbenchGUI;
-import nexustools.expandedtnt.DynamicTNTBench.TileEntityTNTWorkbench;
+import net.nexustools.expandedtnt.DynamicTNTBench.TNTWorkbenchContainer;
+import net.nexustools.expandedtnt.DynamicTNTBench.TNTWorkbenchGUI;
+import net.nexustools.expandedtnt.DynamicTNTBench.TileEntityTNTWorkbench;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class ExpandedTNTGUIHandler implements IGuiHandler {

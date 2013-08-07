@@ -1,4 +1,4 @@
-package nexustools.expandedtnt.DynamicTNT;
+package net.nexustools.expandedtnt.DynamicTNT;
 
 import java.util.logging.Level;
 
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import nexustools.expandedtnt.ExpandedTNT;
+import net.nexustools.expandedtnt.ExpandedTNT;
 
 public class BlockDynamicTNT extends BlockContainer {
 
